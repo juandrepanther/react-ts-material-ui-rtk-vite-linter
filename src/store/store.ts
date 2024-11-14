@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import darkMode_reducer from './reducers/darkModeSlice'
+import modal_reducer from './reducers/modal-slice'
 
 export const store = configureStore({
   reducer: {
-    darkMode_reducer: darkMode_reducer,
+    modal_reducer: modal_reducer,
   },
   devTools: process.env.NODE_ENV !== 'production',
 })
