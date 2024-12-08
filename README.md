@@ -1,10 +1,4 @@
-## Template Setup
-
-- `pnpm create . --template react-ts`
-- `pnpm add -D vitest`
-- `pnpm add @mui/material @emotion/react @emotion/styled`
-- `pnpm add @reduxjs/toolkit react-redux`
-- `pnpm add -D @types/node eslint-plugin-react`
+# Template: react-ts-material-ui-rtk-vite-linter
 
 ## Development
 
