@@ -18,3 +18,7 @@ VITE_API_URL=https://fakestoreapi.com/products
 ## References
 
 - [React Typescript Vite Testing with vitest, React Testing Library(RTL) and Mock Service Worker.](https://medium.com/@kimtai.developer/react-typescript-vite-testing-with-vitest-react-testing-library-rtl-and-mock-service-worker-6f5790eedf84)
+
+## Important
+
+- redux has peer dependencies conflict with react and react-dom. So, github action will use `npm install --legacy-peer-deps`
