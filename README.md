@@ -1,6 +1,16 @@
 # Template: react-ts-material-ui-rtk-vite-linter
 
+## Includes
+
+- React v19 example with `use()` hook.
+
 ## Development
+
+add environment variables to `.env` file
+
+```bash
+VITE_API_URL=https://fakestoreapi.com/products
+```
 
 - `pnpm install`
 - `pnpm run dev`

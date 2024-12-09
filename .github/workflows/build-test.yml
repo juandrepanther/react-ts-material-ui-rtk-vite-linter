@@ -1,0 +1,27 @@
+name: build-test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20.14.0
+      - run: npm install
+      - run: npm run lint
+      - run: npm run test
+        env:
+          VITE_API_URL: 'https://fakestoreapi.com/products/'
+      - run: npm run build
+      - name: Log Build Status
+        if: success()
+        run: echo "Build was successful"
+      - name: Log Build Failure
+        if: failure()
+        run: echo "Build failed"

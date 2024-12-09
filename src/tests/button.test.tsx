@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { test, describe, expect } from 'vitest'
 import { Provider } from 'react-redux'
 import { store } from '../store/store'
-import ButtonComponent from '../components/button'
+import ButtonComponent from '../shared/button'
 import App from '../App'
 
 describe('Demo Tests', () => {

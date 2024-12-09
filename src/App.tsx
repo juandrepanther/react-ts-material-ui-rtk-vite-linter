@@ -1,6 +1,7 @@
 import { Container, Grid2, Typography } from '@mui/material'
-import ButtonComponent from './components/button'
-import DialogComponent from './components/modal'
+import ButtonComponent from './shared/button'
+import DialogComponent from './shared/modal'
+import ProductsList from './components/products'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
             <ButtonComponent title="Click me!" />
           </Grid2>
         </Grid2>
+        <ProductsList />
       </Container>
       <DialogComponent />
     </main>
