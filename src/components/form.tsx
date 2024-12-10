@@ -1,4 +1,5 @@
-import { Box, Button, TextField } from '@mui/material'
+import { useState } from 'react'
+import { Box, Button, TextField, Typography } from '@mui/material'
 import { useFormStatus } from 'react-dom'
 import { postProduct } from '../utils'
 
@@ -14,6 +15,7 @@ function Submit() {
 }
 
 export default function Form() {
+  const [error, setError] = useState<string | null>(null)
   const submit = async (formData: FormData) => {
     const data = {
       title: formData.get('title') as string,
@@ -25,8 +27,10 @@ export default function Form() {
 
     try {
       await postProduct(import.meta.env.VITE_API_URL, data)
+      setError(null)
     } catch (error) {
       console.error('Error posting product:', error)
+      setError('Failed to submit the form. Please try again.')
     }
   }
 
@@ -48,6 +52,11 @@ export default function Form() {
       <TextField size="small" type="text" name="category" placeholder="Category" required />
       <TextField size="small" type="text" name="image" placeholder="Image URL" required />
       <Submit />
+      {error && (
+        <Typography color="error" variant="body2" sx={{ mt: 2 }}>
+          {error}
+        </Typography>
+      )}
     </Box>
   )
 }

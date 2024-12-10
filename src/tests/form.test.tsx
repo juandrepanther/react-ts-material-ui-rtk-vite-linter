@@ -4,7 +4,9 @@ import { postProduct } from '../utils'
 import Form from '../components/form'
 
 vi.mock('../utils', () => ({
-  postProduct: vi.fn(() => Promise.resolve({})),
+  postProduct: vi.fn(() =>
+    Promise.reject(new Error('Failed to submit the form. Please try again.')),
+  ),
 }))
 
 describe('Form Component', () => {
@@ -30,5 +32,9 @@ describe('Form Component', () => {
     await waitFor(() => expect(screen.getByText('Submit Form')).not.toBeDisabled())
 
     expect(postProduct).toHaveBeenCalled()
+
+    await waitFor(() => {
+      expect(screen.getByText('Failed to submit the form. Please try again.')).toBeInTheDocument()
+    })
   })
 })
