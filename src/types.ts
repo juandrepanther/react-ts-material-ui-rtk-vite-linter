@@ -18,3 +18,5 @@ export interface Product {
 export type Products = Product[]
 
 export type PromiseType = SetStateAction<Promise<Products> | null>
+
+export type FormType = Omit<Product, 'id' | 'rating'>

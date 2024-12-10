@@ -1,7 +1,8 @@
-import { Container, Grid2, Typography } from '@mui/material'
+import { Box, Container, Grid2, Typography } from '@mui/material'
 import ButtonComponent from './shared/button'
 import DialogComponent from './shared/modal'
 import ProductsList from './components/products'
+import Form from './components/form'
 
 export default function App() {
   return (
@@ -18,6 +19,9 @@ export default function App() {
           </Grid2>
         </Grid2>
         <ProductsList />
+        <Box>
+          <Form />
+        </Box>
       </Container>
       <DialogComponent />
     </main>
