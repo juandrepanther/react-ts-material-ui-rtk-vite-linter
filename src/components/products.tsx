@@ -42,7 +42,7 @@ export default function ProductsList() {
   const [show, setShow] = useState(false)
 
   function download() {
-    setProductsPromise(getProducts(import.meta.env.VITE_API_URL))
+    setProductsPromise(getProducts(import.meta.env.VITE_API_URL + '/products'))
     setShow(true)
   }
 

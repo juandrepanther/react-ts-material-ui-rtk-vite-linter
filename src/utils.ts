@@ -23,3 +23,28 @@ export const postProduct = (url: string, data: FormType): PromiseType => {
       .catch((error) => reject(error))
   })
 }
+
+export const fakeLogin = async ({ username, password }: { username: string; password: string }) => {
+  try {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username,
+        password,
+      }),
+    })
+
+    if (!response.ok) {
+      throw new Error('Something went wrong')
+    }
+
+    const data = await response.json()
+    return data
+  } catch (error) {
+    console.error('Error logging in:', error)
+    throw error
+  }
+}

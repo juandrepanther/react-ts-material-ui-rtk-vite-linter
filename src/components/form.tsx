@@ -26,7 +26,7 @@ export default function Form() {
     }
 
     try {
-      await postProduct(import.meta.env.VITE_API_URL, data)
+      await postProduct(import.meta.env.VITE_API_URL + '/products', data)
       setError(null)
     } catch (error) {
       console.error('Error posting product:', error)

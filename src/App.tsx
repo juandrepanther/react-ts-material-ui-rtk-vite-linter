@@ -3,6 +3,7 @@ import ButtonComponent from './shared/button'
 import DialogComponent from './shared/modal'
 import ProductsList from './components/products'
 import Form from './components/form'
+import AuthForm from './components/auth-form'
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
         </Box>
       </Container>
       <DialogComponent />
+      <AuthForm />
     </main>
   )
 }

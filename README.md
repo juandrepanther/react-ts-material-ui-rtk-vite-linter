@@ -1,10 +1,11 @@
-# Template: react-ts-material-ui-rtk-vite-linter
+# Template / Sandbox: react-ts-material-ui-rtk-vite-linter
 
 ## Includes
 
 React v19 examples:
 
 - `use()` hook.
+- `useActionState()` hook.
 - `useFormStatus()` hook.
 
 ## Development
@@ -12,7 +13,7 @@ React v19 examples:
 add in to `.env` file
 
 ```bash
-VITE_API_URL=https://fakestoreapi.com/products
+VITE_API_URL=https://fakestoreapi.com
 ```
 
 - `pnpm install`
