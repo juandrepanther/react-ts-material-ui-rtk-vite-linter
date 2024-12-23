@@ -4,7 +4,7 @@
 
 React v19 examples:
 
-- `use()` hook.
+- `use()` method.
 - `useActionState()` hook.
 - `useFormStatus()` hook.
 

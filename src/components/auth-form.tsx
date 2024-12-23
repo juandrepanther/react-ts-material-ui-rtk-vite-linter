@@ -32,15 +32,9 @@ export default function AuthForm() {
 
   return (
     <Container maxWidth="lg">
-      <Typography variant="h3" color="initial">
-        Auth Form
-      </Typography>
-      <Typography variant="body1" color="initial">
-        Username: mor_2314
-      </Typography>
-      <Typography variant="body1" color="initial">
-        Password: 83r5^_
-      </Typography>
+      <Typography variant="h3">Auth Form</Typography>
+      <Typography variant="body1">Username: mor_2314</Typography>
+      <Typography variant="body1">Password: 83r5^_</Typography>
       <Box
         component="form"
         sx={{
@@ -55,8 +49,8 @@ export default function AuthForm() {
         }}
         action={submitAction}
       >
-        <TextField size="small" type="username" name="username" placeholder="username" required />
-        <TextField size="small" type="password" name="password" placeholder="password" required />
+        <TextField size="small" type="username" name="username" required label="Username" />
+        <TextField size="small" type="password" name="password" required label="Password" />
 
         {state.error && (
           <Typography color="error" variant="body2" sx={{ mt: 2 }}>

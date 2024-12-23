@@ -1,35 +1,26 @@
 import { use, useState, Suspense } from 'react'
 import { getProducts } from '../utils'
-import { Products } from '../types'
-import { Button } from '@mui/material'
+import { Products, ProductsProps } from '../types'
+import { Box, Button, Paper } from '@mui/material'
 
-interface ProductsOutputProps {
-  productsPromise: Promise<Products>
-}
-
-const ProductsOutput = ({ productsPromise }: ProductsOutputProps) => {
+const ProductsOutput = ({ productsPromise }: ProductsProps) => {
   const messageContent: Products = use(productsPromise)
+
   return (
-    <>
-      {messageContent.map((product) => {
+    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, my: 2 }}>
+      {messageContent.map(({ price, title, id, image }) => {
         return (
-          <div key={product.id}>
-            <p>{product.description}</p>
-            <p>Price: {product.price}</p>
-            <p>Category: {product.category}</p>
-            <img width={200} src={product.image} alt={product.title} />
-          </div>
+          <Paper key={id} sx={{ p: 2 }}>
+            <p>Price: {price}</p>
+            <img width={100} src={image} alt={title} />
+          </Paper>
         )
       })}
-    </>
+    </Box>
   )
 }
 
-interface ProductsContainerProps {
-  productsPromise: Promise<Products>
-}
-
-const ProductsContainer = ({ productsPromise }: ProductsContainerProps) => {
+const ProductsContainer = ({ productsPromise }: ProductsProps) => {
   return (
     <Suspense fallback={<p>⌛Downloading products...</p>}>
       <ProductsOutput productsPromise={productsPromise} />

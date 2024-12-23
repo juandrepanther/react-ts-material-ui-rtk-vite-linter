@@ -25,3 +25,7 @@ export interface AuthState {
   data: { token: string } | null
   error: string | null
 }
+
+export interface ProductsProps {
+  productsPromise: Promise<Products>
+}

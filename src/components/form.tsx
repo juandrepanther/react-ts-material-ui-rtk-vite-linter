@@ -46,11 +46,11 @@ export default function Form() {
       }}
       action={submit}
     >
-      <TextField size="small" type="text" name="title" placeholder="Title" required />
-      <TextField size="small" type="text" name="description" placeholder="Description" required />
-      <TextField size="small" type="number" name="price" placeholder="Price" required />
-      <TextField size="small" type="text" name="category" placeholder="Category" required />
-      <TextField size="small" type="text" name="image" placeholder="Image URL" required />
+      <TextField size="small" type="text" name="title" label="Title" required />
+      <TextField size="small" type="text" name="description" label="Description" required />
+      <TextField size="small" type="number" name="price" label="Price" required />
+      <TextField size="small" type="text" name="category" label="Category" required />
+      <TextField size="small" type="text" name="image" label="Image URL" required />
       <Submit />
       {error && (
         <Typography color="error" variant="body2" sx={{ mt: 2 }}>

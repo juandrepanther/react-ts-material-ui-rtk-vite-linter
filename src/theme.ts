@@ -1,6 +1,9 @@
 import { createTheme } from '@mui/material/styles'
 
-const theme = createTheme({
+const common = {
+  fontTypography: {
+    fontFamily: 'Roboto',
+  },
   breakpoints: {
     values: {
       xs: 0,
@@ -10,19 +13,35 @@ const theme = createTheme({
       xl: 1536,
     },
   },
-  typography: {
-    fontFamily: 'Raleway',
-  },
+}
+
+const lightSettings = createTheme({
+  ...common,
   palette: {
+    mode: 'light',
     primary: {
-      main: '#FF5733',
+      main: '#007C00',
     },
     secondary: {
-      main: '#E0C2FF',
-      light: '#F5EBFF',
-      contrastText: '#47008F',
+      main: '#5C883D',
     },
   },
 })
 
-export default theme
+const darkSettings = createTheme({
+  ...common,
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#fff',
+    },
+    secondary: {
+      main: '#C2EEA3',
+    },
+  },
+})
+
+export const themes = {
+  light: lightSettings,
+  dark: darkSettings,
+}
