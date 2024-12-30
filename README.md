@@ -25,6 +25,10 @@ VITE_API_URL=https://fakestoreapi.com
 
 ## Linting
 
+Husky and Lint Staged are used for linting.
+
+For running lint-staged, run `npx lint-staged`
+
 - `pnpm run lint`
 
 ## Deployed
